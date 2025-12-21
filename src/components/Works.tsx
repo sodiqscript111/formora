@@ -1,5 +1,6 @@
 import { motion, useInView, type Variants } from 'framer-motion'
 import { useRef } from 'react'
+import { Link } from 'react-router-dom'
 
 const works = [
     {
@@ -67,15 +68,19 @@ function WorkRow({ work, index }: WorkRowProps) {
                 >
                     {work.description}
                 </motion.p>
-                <motion.button
-                    className="bg-transparent border border-brand-dark text-brand-dark px-9 py-3 font-inter text-[0.95rem] font-medium rounded-md cursor-pointer hover:bg-brand-dark hover:text-white transition-all duration-300"
+                <motion.div
                     variants={fadeUpVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                     custom={0.3}
                 >
-                    View Works
-                </motion.button>
+                    <Link
+                        to="/our-works"
+                        className="inline-block bg-transparent border border-brand-dark text-brand-dark px-9 py-3 font-inter text-[0.95rem] font-medium rounded-md cursor-pointer hover:bg-brand-dark hover:text-white transition-all duration-300"
+                    >
+                        View Works
+                    </Link>
+                </motion.div>
             </div>
 
             <div className="flex-[1.4] flex justify-center w-full">
