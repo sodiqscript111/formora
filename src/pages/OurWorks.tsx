@@ -74,37 +74,7 @@ function BrandSection({ brand, index }: BrandSectionProps) {
     // Alternate slide direction: even from left, odd from right
     const slideFromLeft = index % 2 === 0
     const sectionDelay = index * 0.15 // Stagger sections
-
-    // Animation variants for the section container
-    const sectionVariants = {
-        hidden: {
-            x: slideFromLeft ? '-100%' : '100%',
-            opacity: 0
-        },
-        visible: {
-            x: 0,
-            opacity: 1,
-            transition: {
-                duration: 0.7,
-                delay: sectionDelay,
-                ease: [0.25, 0.1, 0.25, 1]
-            }
-        }
-    }
-
-    // Content fade-in with upward movement
-    const contentVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: (delay: number) => ({
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5,
-                delay: sectionDelay + 0.5 + delay, // After section lands
-                ease: [0.25, 0.1, 0.25, 1]
-            }
-        })
-    }
+    const contentBaseDelay = sectionDelay + 0.5 // After section lands
 
     return (
         <div ref={ref}>
@@ -122,19 +92,18 @@ function BrandSection({ brand, index }: BrandSectionProps) {
             <motion.section
                 className="py-16 max-md:py-12 relative overflow-hidden"
                 style={{ backgroundColor: brand.color }}
-                variants={sectionVariants}
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
+                initial={{ x: slideFromLeft ? '-100%' : '100%', opacity: 0 }}
+                animate={isInView ? { x: '0%', opacity: 1 } : { x: slideFromLeft ? '-100%' : '100%', opacity: 0 }}
+                transition={{ duration: 0.7, delay: sectionDelay, ease: 'easeOut' }}
             >
                 <div className="max-w-[1400px] mx-auto px-10 max-md:px-6">
                     <div className="flex items-center justify-between gap-16 max-md:flex-col max-md:gap-10">
                         {/* Left: Folder with brand image */}
                         <motion.div
                             className="flex-shrink-0"
-                            variants={contentVariants}
-                            initial="hidden"
-                            animate={isInView ? "visible" : "hidden"}
-                            custom={0}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                            transition={{ duration: 0.5, delay: contentBaseDelay, ease: 'easeOut' }}
                         >
                             <FolderCard
                                 brandColor={brand.color}
@@ -147,10 +116,9 @@ function BrandSection({ brand, index }: BrandSectionProps) {
                         <div className="flex-1 max-w-[400px] max-md:text-center">
                             <motion.h2
                                 className="font-fraunces text-[2.2rem] max-md:text-[1.8rem] font-medium text-[#2f2f2b] mb-6"
-                                variants={contentVariants}
-                                initial="hidden"
-                                animate={isInView ? "visible" : "hidden"}
-                                custom={0.1}
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                                transition={{ duration: 0.5, delay: contentBaseDelay + 0.1, ease: 'easeOut' }}
                             >
                                 {brand.name}
                             </motion.h2>
@@ -161,10 +129,9 @@ function BrandSection({ brand, index }: BrandSectionProps) {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 text-[#2f2f2b] hover:opacity-70 transition-opacity duration-300 mb-6"
-                                variants={contentVariants}
-                                initial="hidden"
-                                animate={isInView ? "visible" : "hidden"}
-                                custom={0.2}
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                                transition={{ duration: 0.5, delay: contentBaseDelay + 0.2, ease: 'easeOut' }}
                             >
                                 <InstagramIcon />
                                 <span className="font-inter text-[0.95rem]">Instagram</span>
@@ -172,10 +139,9 @@ function BrandSection({ brand, index }: BrandSectionProps) {
 
                             {/* Website link */}
                             <motion.div
-                                variants={contentVariants}
-                                initial="hidden"
-                                animate={isInView ? "visible" : "hidden"}
-                                custom={0.3}
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                                transition={{ duration: 0.5, delay: contentBaseDelay + 0.3, ease: 'easeOut' }}
                             >
                                 <a
                                     href={brand.website}
@@ -202,7 +168,7 @@ export default function OurWorks() {
                 className="max-w-[1400px] mx-auto px-10 max-md:px-6 pt-32 pb-16"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
             >
                 <h1 className="font-fraunces text-[3.5rem] max-md:text-[2.8rem] font-medium text-[#2f2f2b] text-left">
                     Our Works
