@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import logo from '../assets/femoralogo.png'
 
 // Navigation bar component - used on all pages
 export function Nav() {
@@ -8,7 +9,10 @@ export function Nav() {
     return (
         <>
             <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[80%] max-md:w-[92%] bg-brand-matte rounded-4xl max-md:rounded-2xl px-10 max-md:px-6 py-3 flex justify-between items-center z-[1000] shadow-float">
-                <Link to="/" className="font-inter font-bold text-lg text-brand-top tracking-tight no-underline">FORMORA</Link>
+                <Link to="/" className="flex items-center gap-2 font-inter font-bold text-lg text-brand-top tracking-tight no-underline">
+                    <img src={logo} alt="Formora Logo" className="w-12 h-12 rounded-full object-cover" />
+                    FORMORA
+                </Link>
 
                 <div className="flex gap-8 items-center max-md:hidden">
                     <a href="/#home" className="font-inter text-[0.75rem] font-medium text-brand-top tracking-widest opacity-70 hover:opacity-100 transition-opacity no-underline">HOME</a>
