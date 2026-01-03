@@ -13,6 +13,7 @@ const projects = [
             '/assets/Coca Cola Social media designs/coca cola smd3 1.jpg',
             '/assets/Coca Cola Social media designs/coca cola smd4 1.jpg',
             '/assets/Coca Cola Social media designs/coca cola smd5 1.jpg',
+            '/assets/Coca Cola Social media designs/coca cola smdframe.jpg',
         ]
     },
     {
@@ -25,6 +26,16 @@ const projects = [
             '/assets/Nimi Burger Social media Design/Frame 21.png',
             '/assets/Nimi Burger Social media Design/Frame 22.png',
             '/assets/Nimi Burger Social media Design/Frame 23.png',
+            '/assets/Nimi Burger Social media Design/SMD template/Frame 41-1-1.png',
+            '/assets/Nimi Burger Social media Design/SMD template/Frame 41-1.png',
+            '/assets/Nimi Burger Social media Design/SMD template/Frame 41-2-2.png',
+            '/assets/Nimi Burger Social media Design/SMD template/Frame 41-2.png',
+            '/assets/Nimi Burger Social media Design/SMD template/Frame 41-3-1.png',
+            '/assets/Nimi Burger Social media Design/SMD template/Frame 41-3.png',
+            '/assets/Nimi Burger Social media Design/SMD template/Frame 41-4-1.png',
+            '/assets/Nimi Burger Social media Design/SMD template/Frame 41-4.png',
+            '/assets/Nimi Burger Social media Design/SMD template/Frame 41-5-1.png',
+            '/assets/Nimi Burger Social media Design/SMD template/Frame 41-5.png',
         ]
     },
     {
@@ -36,6 +47,18 @@ const projects = [
             '/assets/Passion Consults Single and Carouse SMD/Passion consult SMD sep15.jpg',
             '/assets/Passion Consults Single and Carouse SMD/Passion consult SMD sep26.jpg',
             '/assets/Passion Consults Single and Carouse SMD/Passion consult SMD sep30.jpg',
+            '/assets/Passion Consults Single and Carouse SMD/carouselSep17_ passionconsults.jpg',
+            '/assets/Passion Consults Single and Carouse SMD/carouselSep17_ passionconsults1.jpg',
+            '/assets/Passion Consults Single and Carouse SMD/carouselSep17_ passionconsults2.jpg',
+            '/assets/Passion Consults Single and Carouse SMD/carouselSep17_ passionconsults3.jpg',
+            '/assets/Passion Consults Single and Carouse SMD/carouselSep17_ passionconsults4.jpg',
+            '/assets/Passion Consults Single and Carouse SMD/carouselSep17_ passionconsults5.jpg',
+            '/assets/Passion Consults Single and Carouse SMD/carouselSep24_ passionconsults.jpg',
+            '/assets/Passion Consults Single and Carouse SMD/carouselSep24_ passionconsults.1.jpg',
+            '/assets/Passion Consults Single and Carouse SMD/carouselSep24_ passionconsults.2.jpg',
+            '/assets/Passion Consults Single and Carouse SMD/carouselSep24_ passionconsults.3.jpg',
+            '/assets/Passion Consults Single and Carouse SMD/carouselSep24_ passionconsults.4.jpg',
+            '/assets/Passion Consults Single and Carouse SMD/carouselSep24_ passionconsults.5.jpg',
         ]
     },
     {
@@ -47,6 +70,8 @@ const projects = [
             '/assets/Sewanu Cakes Social media Designs/Frame 2.png',
             '/assets/Sewanu Cakes Social media Designs/Frame 3.png',
             '/assets/Sewanu Cakes Social media Designs/Frame 4.png',
+            '/assets/Sewanu Cakes Social media Designs/Frame 10.png',
+            '/assets/Sewanu Cakes Social media Designs/Frame 18.png',
         ]
     }
 ]
@@ -130,8 +155,8 @@ function ProjectSection({ project, index }: ProjectSectionProps) {
                                 key={imgIndex}
                                 onClick={() => setSelectedImage(imgIndex)}
                                 className={`flex-shrink-0 w-28 h-28 max-md:w-20 max-md:h-20 rounded-xl overflow-hidden border-3 transition-all duration-300 ${selectedImage === imgIndex
-                                        ? 'border-[#2f2f2b] scale-105 shadow-lg'
-                                        : 'border-transparent opacity-70 hover:opacity-100'
+                                    ? 'border-[#2f2f2b] scale-105 shadow-lg'
+                                    : 'border-transparent opacity-70 hover:opacity-100'
                                     }`}
                             >
                                 <img
