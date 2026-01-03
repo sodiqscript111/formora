@@ -2,13 +2,22 @@ interface FolderCardProps {
     brandColor: string
     brandImage: string
     brandName: string
+    size?: 'default' | 'large'
 }
 
-export default function FolderCard({ brandColor, brandImage, brandName }: FolderCardProps) {
+export default function FolderCard({ brandColor, brandImage, brandName, size = 'default' }: FolderCardProps) {
+    const isLarge = size === 'large'
+
     return (
-        <div className="relative w-[320px] h-[240px] max-md:w-[260px] max-md:h-[200px] cursor-pointer transition-all duration-300 ease-out hover:scale-110 hover:rotate-3">
+        <div className={`relative cursor-pointer transition-all duration-300 ease-out hover:scale-110 hover:rotate-3 ${isLarge
+                ? 'w-[420px] h-[320px] max-md:w-[320px] max-md:h-[240px]'
+                : 'w-[320px] h-[240px] max-md:w-[260px] max-md:h-[200px]'
+            }`}>
             {/* Brand image behind folder, popping out at top */}
-            <div className="absolute -top-[30px] left-1/2 -translate-x-1/2 w-[180px] max-md:w-[140px] z-0">
+            <div className={`absolute left-1/2 -translate-x-1/2 z-0 ${isLarge
+                    ? '-top-[50px] w-[280px] max-md:w-[200px]'
+                    : '-top-[30px] w-[180px] max-md:w-[140px]'
+                }`}>
                 <img
                     src={brandImage}
                     alt={brandName}

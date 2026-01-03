@@ -17,7 +17,7 @@ export function Nav() {
                 <div className="flex gap-8 items-center max-md:hidden">
                     <a href="/#home" className="font-inter text-[0.75rem] font-medium text-brand-top tracking-widest opacity-70 hover:opacity-100 transition-opacity no-underline">HOME</a>
                     <a href="/#services" className="font-inter text-[0.75rem] font-medium text-brand-top tracking-widest opacity-70 hover:opacity-100 transition-opacity no-underline">SERVICES</a>
-                    <Link to="/our-works" className="font-inter text-[0.75rem] font-medium text-brand-top tracking-widest opacity-70 hover:opacity-100 transition-opacity no-underline">WORKS</Link>
+                    <Link to="/website-works" className="font-inter text-[0.75rem] font-medium text-brand-top tracking-widest opacity-70 hover:opacity-100 transition-opacity no-underline">WORKS</Link>
                     <a href="/#about" className="font-inter text-[0.75rem] font-medium text-brand-top tracking-widest opacity-70 hover:opacity-100 transition-opacity no-underline">ABOUT</a>
                 </div>
 
@@ -35,7 +35,7 @@ export function Nav() {
             <div className={`fixed top-[5.5rem] left-1/2 -translate-x-1/2 w-[92%] bg-brand-matte rounded-2xl py-10 px-6 flex flex-col items-center gap-8 z-[999] shadow-xl transition-all duration-400 ease-in-out ${isMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-[10px]'}`}>
                 <a href="/#home" className="font-inter text-base font-medium text-brand-top tracking-[0.1em] opacity-80 hover:opacity-100 no-underline" onClick={() => setIsMenuOpen(false)}>HOME</a>
                 <a href="/#services" className="font-inter text-base font-medium text-brand-top tracking-[0.1em] opacity-80 hover:opacity-100 no-underline" onClick={() => setIsMenuOpen(false)}>SERVICES</a>
-                <Link to="/our-works" className="font-inter text-base font-medium text-brand-top tracking-[0.1em] opacity-80 hover:opacity-100 no-underline" onClick={() => setIsMenuOpen(false)}>WORKS</Link>
+                <Link to="/website-works" className="font-inter text-base font-medium text-brand-top tracking-[0.1em] opacity-80 hover:opacity-100 no-underline" onClick={() => setIsMenuOpen(false)}>WORKS</Link>
                 <a href="/#about" className="font-inter text-base font-medium text-brand-top tracking-[0.1em] opacity-80 hover:opacity-100 no-underline" onClick={() => setIsMenuOpen(false)}>ABOUT</a>
             </div>
         </>

@@ -7,16 +7,19 @@ const works = [
         title: 'Website Development',
         description: 'Bespoke digital platforms built with precision and performance in mind. We create experiences that resonate.',
         image: '/assets/website_dev.png',
+        link: '/website-works',
     },
     {
         title: 'Branding',
         description: 'Elevating identities through strategic design and storytelling. We define the soul of your brand.',
         image: '/assets/branding.png',
+        link: '/website-works', // Branding also leads to website works for now
     },
     {
         title: 'Graphic Design',
         description: 'Visual communication that captures attention and delivers your message with clarity and elegance.',
         image: '/assets/graphic_design.png',
+        link: '/graphic-design-works',
     }
 ]
 
@@ -75,7 +78,7 @@ function WorkRow({ work, index }: WorkRowProps) {
                     custom={0.3}
                 >
                     <Link
-                        to="/our-works"
+                        to={work.link}
                         className="inline-block bg-transparent border border-brand-dark text-brand-dark px-9 py-3 font-inter text-[0.95rem] font-medium rounded-md cursor-pointer hover:bg-brand-dark hover:text-white transition-all duration-300"
                     >
                         View Works
